@@ -1,0 +1,610 @@
+* {
+  box-sizing: border-box;
+  font-family: "Saira" !important;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.96);
+  transition: transform 200ms;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-inline: 96px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.header .nav {
+  display: flex;
+  gap: 48px;
+}
+
+.header .nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: #666666;
+
+  width: max-content;
+  height: 32px;
+
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 200ms;
+}
+
+.header .nav a::after {
+  position: absolute;
+  visibility: hidden;
+  content: "";
+  transition: 200ms;
+  background-color: #fff;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .nav a:nth-child(1) {
+  color: #00b2e2 !important;
+  transition: 200ms;
+}
+
+.header .nav a:nth-child(1):after {
+  position: absolute;
+  visibility: visible !important;
+  content: "";
+  transition: 200ms;
+  background-color: #00b2e2;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .nav a:hover {
+  color: #00b2e2;
+  transition: 200ms;
+}
+
+.header .nav a:hover::after {
+  position: absolute;
+  visibility: visible;
+  content: "";
+  transition: 200ms;
+  background-color: #00b2e2;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.header .buttons button:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: 1px solid #00b2e2;
+  color: #00b2e2;
+  background-color: transparent;
+
+  width: 120px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.header .buttons button:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: none;
+  color: #fff;
+  background-color: #00b2e2;
+
+  width: 192px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.header .buttons button:nth-child(3) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: 1px solid #f0f0f0;
+  color: #000;
+  background-color: transparent;
+
+  width: 48px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.banner {
+  position: relative;
+  height: 224px;
+  width: 100%;
+  margin-top: 80px;
+  background-image: url(./assets/urunlerBanner.svg);
+  background-size: cover;
+}
+
+.banner::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 212, 255, 0) 75%
+  );
+  top: 0;
+  left: 0;
+}
+
+.banner .square {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+}
+
+.banner .square:after {
+  position: absolute;
+  content: "";
+  bottom: 32px;
+  right: 32px;
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+}
+
+.banner .banner-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1;
+  border: 1x solid red;
+  width: 100%;
+  color: #fff;
+  bottom: 0;
+  padding-inline: 96px;
+  padding-block: 16px;
+}
+
+.banner .banner-text .title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.banner .banner-text .road {
+  font-size: 13px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding-inline: 96px;
+}
+
+.products .side-nav {
+  width: 30%;
+  height: 1080px;
+}
+
+.products .side-nav a,
+.products .side-nav .dropdown-btn {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #4d4d4d;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.products .side-nav .dropdown-btn {
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products .side-nav .dropdown-container {
+  height: 0;
+  overflow: hidden;
+  padding-left: 8px;
+  transition: height 0.2s ease; /* Geçiş efekti */
+}
+
+.products .side-nav .dropdown-container a {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.products .side-nav a:hover,
+.products .side-nav .dropdown-btn:hover {
+  color: #8c8c8c;
+}
+
+.products .products-part {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.products .products-part .products-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 24px;
+}
+
+.products .products-part h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.products .products-part .product-card {
+  border: 1px solid #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  /* width: calc(33.33% - 24px); */
+  width: 294px;
+  height: 296px;
+  padding-inline: 16px;
+  padding-block: 12px;
+}
+
+.products .products-part .product-card img:nth-child(1) {
+  padding: 4px;
+}
+
+.products .products-part .product-card a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+.products .products-part .product-card .detail-direction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px !important;
+  font-weight: 600;
+  gap: 32px;
+}
+
+.products .slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  left: 96px;
+  bottom: 72px;
+}
+
+.products .slider-buttons button {
+  border: none;
+  background-color: transparent;
+}
+
+.products .slider-buttons #prev-button {
+  opacity: 0.2;
+}
+
+.products .slider-buttons #next-button {
+  opacity: 0.6;
+}
+
+.products .slider-buttons .indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  color: #b3b3b3;
+  font-weight: 500;
+  letter-spacing: 8px;
+  width: 40px;
+  padding-left: 12px;
+}
+
+.products .slider-buttons .indicator .first {
+  color: #00b2e2;
+}
+
+.catalog {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 96px;
+}
+
+.catalog .catalog-image {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 552px;
+  height: 328px;
+  padding-block: 24px;
+}
+
+.catalog .catalog-image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(./assets/room.svg);
+  z-index: -2;
+}
+
+.catalog .catalog-image::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.catalog .catalog-image strong {
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 10px;
+}
+
+.catalog .catalog-image div:nth-child(1)::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+}
+
+.catalog .catalog-image div:nth-child(1)::before {
+  position: absolute;
+  content: "";
+  bottom: 48px;
+  right: 48px;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+}
+
+.catalog .catalog-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.catalog .catalog-text h1 {
+  color: #333333;
+  font-size: 32px;
+  font-weight: 600;
+  width: 80%;
+}
+
+.catalog .catalog-text button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  color: #fff;
+  background-color: #00b2e2;
+
+  width: 192px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.contact {
+  padding-inline: 96px;
+  height: 272px;
+}
+
+.contact .contact-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #0068a2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 40px;
+  padding-inline-start: 40px;
+  color: #fff;
+}
+
+.contact .contact-content::after {
+  position: absolute;
+  content: "";
+  height: 48px;
+  width: 48px;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.contact .contact-content::before {
+  position: absolute;
+  content: "";
+  height: 48px;
+  width: 48px;
+  top: 48px;
+  right: 48px;
+  background-color: #fff;
+}
+
+.contact .contact-content h1 {
+  box-sizing: border-box;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.contact .contact-content p {
+  margin-right: 144px !important;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.contact .contact-content .buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.contact .contact-content .buttons {
+  font-size: 14px !important;
+  height: 40px;
+  display: flex;
+  width: max-content;
+  gap: 24px;
+}
+
+.contact .contact-content .buttons button:nth-child(1) {
+  background-color: #fff;
+  color: #0068a2;
+  border: none;
+}
+
+.contact .contact-content .buttons button:nth-child(2) {
+  background-color: #0068a2;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 376px;
+  background-color: #f0f0f0;
+  padding-inline: 96px;
+  padding-block: 32px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.footer .social-media {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .social-media .icons {
+  display: flex;
+  gap: 24px;
+}
+
+.footer .social-media .icons a {
+  display: flex;
+  gap: 4px;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.footer .nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 260px;
+  list-style-type: none;
+}
+
+.footer .nav ul li {
+  color: #333333;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footer .nav ul li:nth-child(1) {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 600;
+}

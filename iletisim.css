@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+  font-family: "Saira" !important;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.96);
+  transition: transform 200ms;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-inline: 96px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.header .nav {
+  display: flex;
+  gap: 48px;
+}
+
+.header .nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: #666666;
+
+  width: max-content;
+  height: 32px;
+
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 200ms;
+}
+
+.header .nav a::after {
+  position: absolute;
+  visibility: hidden;
+  content: "";
+  transition: 200ms;
+  background-color: #fff;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .nav a:nth-child(4) {
+  color: #00b2e2 !important;
+  transition: 200ms;
+}
+
+.header .nav a:nth-child(4):after {
+  position: absolute;
+  visibility: visible !important;
+  content: "";
+  transition: 200ms;
+  background-color: #00b2e2;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .nav a:hover {
+  color: #00b2e2;
+  transition: 200ms;
+}
+
+.header .nav a:hover::after {
+  position: absolute;
+  visibility: visible;
+  content: "";
+  transition: 200ms;
+  background-color: #00b2e2;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.header .buttons button:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: 1px solid #00b2e2;
+  color: #00b2e2;
+  background-color: transparent;
+
+  width: 120px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.header .buttons button:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: none;
+  color: #fff;
+  background-color: #00b2e2;
+
+  width: 192px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.header .buttons button:nth-child(3) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: 1px solid #f0f0f0;
+  color: #000;
+  background-color: transparent;
+
+  width: 48px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.banner {
+  position: relative;
+  height: 224px;
+  width: 100%;
+  margin-top: 80px;
+  background-image: url(./assets/iletisimBanner.svg);
+  background-size: cover;
+}
+
+.banner::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 212, 255, 0) 75%
+  );
+  top: 0;
+  left: 0;
+}
+
+.banner .square {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+}
+
+.banner .square:after {
+  position: absolute;
+  content: "";
+  bottom: 32px;
+  right: 32px;
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+}
+
+.banner .banner-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1;
+  border: 1x solid red;
+  width: 100%;
+  color: #fff;
+  bottom: 0;
+  padding-inline: 96px;
+  padding-block: 24px;
+}
+
+.banner .banner-text .title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.projects-one-about {
+  position: relative;
+  width: 100%;
+  padding-inline: 96px;
+  /* gap: 32px; */
+  margin-bottom: 200px !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects-two-about {
+  position: relative;
+  width: 100%;
+  padding-inline: 96px;
+  /* gap: 32px; */
+  margin-bottom: 200px !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.about-content {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.about-content p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.about-image {
+  position: relative;
+  height: max-content;
+  box-sizing: border-box;
+}
+
+.communication {
+  padding-inline: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4d4d4d;
+}
+
+.communication .communication-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
+  height: 330px;
+  width: 100%;
+}
+
+.communication .communication-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.communication .communication-content h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.communication .communication-content .communication-part {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.communication .communication-content .communication-part div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.communication .communication-content button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: none;
+  color: #fff;
+  background-color: #00b2e2;
+
+  width: 192px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.communication .communication-image {
+  height: 330px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 376px;
+  background-color: #f0f0f0;
+  padding-inline: 96px;
+  padding-block: 32px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.footer .social-media {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .social-media .icons {
+  display: flex;
+  gap: 24px;
+}
+
+.footer .social-media .icons a {
+  display: flex;
+  gap: 4px;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.footer .nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 260px;
+  list-style-type: none;
+}
+
+.footer .nav ul li {
+  color: #333333;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footer .nav ul li:nth-child(1) {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 600;
+}

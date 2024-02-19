@@ -1,76 +1,56 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const bannerContent1 = document.querySelector('.banner-content');
-  const bannerContent2 = document.querySelector('.banner-content-second');
-  const prevButton = document.getElementById('prev-button');
-  const nextButton = document.getElementById('next-button');
+document.addEventListener("DOMContentLoaded", function () {
+  const prevButton = document.getElementById("prev-button");
+  const nextButton = document.getElementById("next-button");
 
   let currentContent = 1;
+  const totalContents = 4;
+  let translateValue = 0;
+
+  for (let i = 1; i <= totalContents; i++) {
+    document.querySelector(
+      `.banner-content-${i}`
+    ).style.transform = `translateX(${translateValue}%)`;
+
+    translateValue += 100;
+  }
+
+  document.querySelector(
+    ".indicator .second"
+  ).textContent = `/${totalContents}`;
+
   updateIndicator();
 
-  prevButton.addEventListener('click', function() {
-    if (currentContent === 2) {
+  prevButton.addEventListener("click", function () {
+    if (currentContent > 1) {
+      currentContent--;
       toggleContent();
-      currentContent = 1;
       updateIndicator();
     }
   });
 
-  nextButton.addEventListener('click', function() {
-    if (currentContent === 1) {
+  nextButton.addEventListener("click", function () {
+    if (currentContent < totalContents) {
+      currentContent++;
       toggleContent();
-      currentContent = 2;
       updateIndicator();
     }
   });
 
   function toggleContent() {
-    bannerContent1.style.display = (currentContent === 1) ? 'none' : 'flex';
-    bannerContent2.style.display = (currentContent === 2) ? 'none' : 'flex';
-    prevButton.style.opacity = currentContent === 1 ? "1" : "0.3";
-    nextButton.style.opacity = currentContent === 2 ? "1" : "0.3";
+    let translateValue = (currentContent - 1) * -100;
+
+    for (let i = 1; i <= totalContents; i++) {
+      document.querySelector(
+        `.banner-content-${i}`
+      ).style.transform = `translateX(${translateValue}%)`;
+
+      translateValue += 100;
+    }
+    prevButton.style.opacity = currentContent > 1 ? "0.6" : "0.2";
+    nextButton.style.opacity = currentContent < totalContents ? "0.6" : "0.2";
   }
 
   function updateIndicator() {
-    document.querySelector('.indicator span').textContent = currentContent;
+    document.querySelector(".indicator .first").textContent = currentContent;
   }
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const bannerContent1 = document.querySelector(".banner-content");
-//   const bannerContent2 = document.querySelector(".banner-content2");
-//   const prevButton = document.getElementById("prev-button");
-//   const nextButton = document.getElementById("next-button");
-
-//   let currentContent = 1;
-//   updateIndicator();
-
-//   prevButton.addEventListener("click", function () {
-//     if (currentContent === 2) {
-//       toggleContent();
-//       currentContent = 1;
-//       updateIndicator();
-//     }
-//   });
-
-//   nextButton.addEventListener("click", function () {
-//     if (currentContent === 1) {
-//       toggleContent();
-//       currentContent = 2;
-//       updateIndicator();
-//     }
-//   });
-
-//   function toggleContent() {
-//     bannerContent1.style.transform =
-//       currentContent === 1 ? "translateX(-110%)" : "translateX(0%)";
-//     bannerContent2.style.transform =
-//       currentContent === 2 ? "translateX(10%)" : "translateX(-100%)";
-//     prevButton.style.opacity = currentContent === 1 ? "1" : "0.3";
-//     nextButton.style.opacity = currentContent === 2 ? "1" : "0.3";
-//   }
-
-//   function updateIndicator() {
-//     document.querySelector(".indicator span").textContent = currentContent;
-//   }
-// });
-

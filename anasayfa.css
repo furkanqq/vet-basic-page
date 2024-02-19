@@ -1,21 +1,26 @@
 * {
   box-sizing: border-box;
   font-family: "Saira" !important;
+  margin: 0;
 }
 
 body {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
 }
 
 button {
   cursor: pointer;
 }
+/* 
+img {
+  width: 100%;
+  height: 100%;
+} */
 
 button:active {
-  transform: scale(0.98);
-  transition: 200ms;
+  transform: scale(0.96);
+  transition: transform 200ms;
 }
 
 section {
@@ -36,26 +41,76 @@ section {
 
   padding-inline: 96px;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .header .nav {
   display: flex;
-  gap: 24px;
+  gap: 48px;
 }
 
 .header .nav a {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   color: #666666;
 
-  width: 114px;
+  width: max-content;
   height: 32px;
 
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
+  transition: 200ms;
+}
+
+.header .nav a::after {
+  position: absolute;
+  visibility: hidden;
+  content: "";
+  transition: 200ms;
+  background-color: #fff;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .nav a:nth-child(4) {
+  color: #00b2e2 !important;
+  transition: 200ms;
+}
+
+.header .nav a:nth-child(4):after {
+  position: absolute;
+  visibility: visible !important;
+  content: "";
+  transition: 200ms;
+  background-color: #00b2e2;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.header .nav a:hover {
+  color: #00b2e2;
+  transition: 200ms;
+}
+
+.header .nav a:hover::after {
+  position: absolute;
+  visibility: visible;
+  content: "";
+  transition: 200ms;
+  background-color: #00b2e2;
+  bottom: -24px;
+  left: 0;
+  height: 4px;
+  width: 100%;
 }
 
 .header .buttons {
@@ -122,22 +177,61 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 96px;
-  padding-block: 62px;
   margin-top: 80px;
   overflow: hidden;
 }
 
-.banner .banner-content {
+.banner .banner-content-1 {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100%;
+  padding-inline: 96px;
+  padding-block: 62px;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.banner .banner-content-2 {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: 96px;
+  padding-block: 62px;
   transition: transform 0.5s ease-in-out;
 }
 
-.banner .banner-content .banner-text {
+.banner .banner-content-3 {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: 96px;
+  padding-block: 62px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.banner .banner-content-4 {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: 96px;
+  padding-block: 62px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.banner .banner-text {
   display: flex;
   flex-direction: column;
   width: 556px;
@@ -146,24 +240,22 @@ section {
   justify-content: center;
 }
 
-.banner .banner-content .banner-text h1 {
+.banner .banner-text h1 {
   font-size: 44px;
   font-weight: 500;
-  line-height: 57px;
   color: #333333;
-  margin: 0;
 }
 
-.banner .banner-content .banner-text p {
+.banner .banner-text p {
   font-size: 20px;
   font-weight: 400;
   color: #333333;
-  margin: 0;
+
   line-height: 33px;
   margin-bottom: 32px;
 }
 
-.banner .banner-content .banner-text button {
+.banner .banner-text button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,12 +272,12 @@ section {
   padding-inline: 16px;
 }
 
-.banner .banner-content .banner-image {
+.banner .banner-image {
   position: relative;
   height: 560px;
 }
 
-.banner .banner-content .banner-image .square {
+.banner .banner-image .square {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -194,7 +286,7 @@ section {
   background-color: #fff;
 }
 
-.banner .banner-content .banner-image .square:before {
+.banner .banner-image .square:before {
   position: absolute;
   content: "";
   right: 64px;
@@ -204,94 +296,7 @@ section {
   background-color: #fff;
 }
 
-.banner .banner-content .banner-image .square:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 128px;
-  width: 64px;
-  height: 64px;
-  background-color: #fff;
-}
-
-.banner .banner-content-second {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transform: translateX(0%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.banner .banner-content-second .banner-text {
-  display: flex;
-  flex-direction: column;
-  width: 556px;
-  margin-bottom: 132px;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.banner .banner-content-second .banner-text h1 {
-  font-size: 44px;
-  font-weight: 500;
-  line-height: 57px;
-  color: #333333;
-  margin: 0;
-}
-
-.banner .banner-content-second .banner-text p {
-  font-size: 20px;
-  font-weight: 400;
-  color: #333333;
-  margin: 0;
-  line-height: 33px;
-  margin-bottom: 32px;
-}
-
-.banner .banner-content-second .banner-text button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-
-  border: none;
-  color: #fff;
-  background-color: #00b2e2;
-
-  width: 154px;
-  height: 40px;
-
-  padding-block: 8px;
-  padding-inline: 16px;
-}
-
-.banner .banner-content-second .banner-image {
-  position: relative;
-  height: 560px;
-}
-
-.banner .banner-content-second .banner-image .square {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 64px;
-  height: 64px;
-  background-color: #fff;
-}
-
-.banner .banner-content-second .banner-image .square:before {
-  position: absolute;
-  content: "";
-  right: 64px;
-  bottom: 64px;
-  width: 64px;
-  height: 64px;
-  background-color: #fff;
-}
-
-.banner .banner-content-second .banner-image .square:after {
+.banner .banner-image .square:after {
   position: absolute;
   content: "";
   right: 0;
@@ -307,7 +312,8 @@ section {
   align-items: center;
   gap: 24px;
   left: 96px;
-  bottom: 62px;
+  bottom: 72px;
+  z-index: 5;
 }
 
 .banner .slider-buttons button {
@@ -316,22 +322,27 @@ section {
 }
 
 .banner .slider-buttons #prev-button {
-  opacity: 0.3;
+  opacity: 0.2;
+}
+
+.banner .slider-buttons #next-button {
+  opacity: 0.6;
 }
 
 .banner .slider-buttons .indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 28px;
   color: #b3b3b3;
   font-weight: 500;
   letter-spacing: 8px;
+  width: 80px;
+  padding-left: 12px;
 }
 
-.banner .slider-buttons .indicator span {
+.banner .slider-buttons .indicator .first {
   color: #00b2e2;
-}
-
-.products {
-  /* border: 1px solid red; */
 }
 
 .products .title {
@@ -343,7 +354,7 @@ section {
 
 .products .title h1 {
   box-sizing: border-box;
-  margin: 0;
+
   font-size: 40px;
   font-weight: 500;
   width: 100%;
@@ -353,7 +364,7 @@ section {
 
 .products .title p {
   box-sizing: border-box;
-  margin: 0;
+
   font-size: 18px;
   font-weight: 400;
   max-width: 1000px;
@@ -484,7 +495,6 @@ section {
   font-size: 32px;
   font-weight: 600;
   width: 80%;
-  margin: 0;
 }
 
 .catalog .catalog-text button {
@@ -530,16 +540,16 @@ section {
 .about .about-content h1 {
   width: 612px;
   box-sizing: border-box;
-  margin: 0;
+
   color: #333333;
   font-size: 32px;
   font-weight: 600;
 }
 
 .about .about-content p {
-  width: 612px;
+  width: 45%;
   box-sizing: border-box;
-  margin: 0;
+
   font-size: 18px;
   font-weight: 400;
   color: #333333;
@@ -549,7 +559,7 @@ section {
   width: 612px;
   box-sizing: border-box;
   text-decoration: underline;
-  margin: 0;
+
   font-size: 18px;
   font-weight: 500;
   color: #333333;
@@ -627,7 +637,7 @@ section {
 
 .contact .contact-content h1 {
   font-family: saira;
-  margin: 0;
+
   box-sizing: border-box;
   font-size: 32px;
   font-weight: 600;
@@ -725,4 +735,57 @@ section {
   color: #333333;
   font-size: 18px;
   font-weight: 600;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    width: 100%;
+    overflow: hidden;
+  }
+  .banner {
+    border: 1px solid red;
+    margin-top: 80px;
+    width: 100% !important;
+  }
+  .banner .banner-content-1 {
+    padding-inline: 16px;
+    padding-top: 200px;
+    flex-direction: column-reverse;
+    height: max-content;
+    gap: 0px;
+  }
+
+  .banner .banner-text h1 {
+    font-size: 24px;
+  }
+  .banner .banner-text p {
+    font-size: 16px;
+  }
+  .banner .banner-text {
+    width: 100%;
+    gap: 0px;
+  }
+  .banner .banner-image {
+    height: max-content;
+    border: 1px solid red;
+  }
+
+  .banner .banner-image .square {
+    bottom: 8px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .banner .banner-image .square:before {
+    right: 36px;
+    bottom: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .banner .banner-image .square:after {
+    bottom: 72px;
+    width: 36px;
+    height: 36px;
+  }
 }

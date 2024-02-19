@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="anasayfa.css" />
+    <link rel="stylesheet" href="iletisim.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,12 +19,14 @@
   </head>
   <body>
     <header class="header">
-      <img src="./assets/Logo.svg" alt="logo" width="122" height="48" />
+      <a href="/anasayfa.html">
+        <img src="./assets/Logo.svg" alt="logo" width="122" height="48" />
+      </a>
       <nav class="nav">
-        <a href="#">Ürünler</a>
-        <a href="#">Hakkımızda</a>
-        <a href="#">Projelerimiz</a>
-        <a href="#">İletişim</a>
+        <a href="/urunler.html">Ürünler</a>
+        <a href="/hakkimizda.html">Hakkımızda</a>
+        <a href="/projelerimiz.html">Projelerimiz</a>
+        <a href="/iletisim.html">İletişim</a>
       </nav>
       <div class="buttons">
         <button>
@@ -50,6 +52,53 @@
         </button>
       </div>
     </header>
+    <section class="banner">
+      <div class="square"></div>
+      <div class="banner-text">
+        <h1 class="title">Projelerimiz</h1>
+      </div>
+    </section>
+    <section class="communication">
+      <div class="communication-content">
+        <h1>Bize Ulaşın</h1>
+        <h3>MageVet LTD.ŞTİ.</h3>
+        <div class="communication-part">
+          <div>
+            <img
+              src="./assets/locationBlue.svg"
+              alt="icon"
+              height="40"
+              width="40"
+            />
+            <span
+              >E-5 Maltepe Köprüsü, Atatürk Cd. No:150/D, 34844 Maltepe</span
+            >
+          </div>
+          <div>
+            <img
+              src="./assets/blueMail.svg"
+              alt="icon"
+              height="40"
+              width="40"
+            />
+            <span>magevet.info@gmail.com</span>
+          </div>
+          <div>
+            <img
+              src="./assets/phoneBlue.svg"
+              alt="icon"
+              height="40"
+              width="40"
+            />
+            <span>+90 (216) 427 09 40</span>
+          </div>
+        </div>
+        <button>Yol Tarifi Al</button>
+      </div>
+      <div class="communication-image">
+        <img src="./assets/map.png" alt="map" height="330" width="612" />
+      </div>
+    </section>
     <footer class="footer">
       <div class="social-media">
         <img
