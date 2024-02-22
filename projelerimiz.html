@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="projelerimiz.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -51,8 +52,153 @@
           />
         </button>
       </div>
+      <div class="mobile-menu">
+        <button>
+          <img
+            class="open"
+            src="./assets/menu.svg"
+            alt="menu"
+            height="32"
+            width="32"
+          />
+          <img
+            class="close"
+            src="./assets/close.svg"
+            alt="menu"
+            height="24"
+            width="24"
+          />
+        </button>
+        <div class="mobile-nav">
+          <div class="nav-container">
+            <ul class="first">
+              <li class="mobile-product">
+                Ürünler<img
+                  src="./assets/chevronRight.svg"
+                  alt="chevron"
+                  height="32"
+                  width="32"
+                />
+              </li>
+              <li>
+                Hakkımızda<img
+                  src="./assets/chevronRight.svg"
+                  alt="chevron"
+                  height="32"
+                  width="32"
+                />
+              </li>
+              <li>
+                Projelerimiz<img
+                  src="./assets/chevronRight.svg"
+                  alt="chevron"
+                  height="32"
+                  width="32"
+                />
+              </li>
+              <li>
+                İletişim<img
+                  src="./assets/chevronRight.svg"
+                  alt="chevron"
+                  height="32"
+                  width="32"
+                />
+              </li>
+            </ul>
+            <nav class="mobile-side-nav">
+              <div class="back-and-next">
+                <div class="back">
+                  <img
+                    src="./assets/chevronLeft.svg"
+                    alt="chevron"
+                    width="20"
+                    height="20"
+                  />
+                  Menu
+                </div>
+                <div class="next">
+                  Tüm ürünler
+                  <img
+                    src="./assets/chevronRight.svg"
+                    alt="chevron"
+                    width="20"
+                    height="20"
+                  />
+                </div>
+              </div>
+              <button class="dropdown-btn">
+                Kafes Üniteleri
+                <img src="./assets/chevronDown.svg" />
+              </button>
+              <div class="dropdown-container">
+                <a href="#">Kedi Kafesleri</a>
+                <a href="#">Köpek Kafesleri</a>
+              </div>
+              <a href="#">Köpek Yıkama Üniteleri</a>
+              <a href="#">Çalışma Tezgahları ve Eviyeli Tezgahlar</a>
+              <button class="dropdown-btn">
+                Klinik ve Ameliyathane Ekipmanları
+                <img src="./assets/chevronDown.svg" />
+              </button>
+              <div class="dropdown-container">
+                <a href="#">Dolaplar</a>
+                <a href="#">Ameliyat Operasyon Masaları</a>
+                <a href="#">Muayene Masaları</a>
+                <a href="#">Mayo Masalar</a>
+                <a href="#">Serum Askıları</a>
+                <a href="#">Alet ve Pansuman Arabaları</a>
+                <a href="#">Kurşun Önlük Askıları</a>
+                <a href="#">Basamaklar</a>
+                <a href="#">Diğer Paslanmaz Ürünler</a>
+              </div>
+            </nav>
+            <div class="buttons-nav">
+              <button>
+                <img
+                  src="./assets/ekatalog.svg"
+                  alt="katalog"
+                  width="20"
+                  height="20"
+                />E-Katalog
+              </button>
+              <button>
+                <img src="./assets/wp.svg" alt="wp" height="20" width="20" />+90
+                (216) 427 09 40
+              </button>
+            </div>
+          </div>
+          <div class="mobile-footer">
+            <div>
+              <button>
+                TR
+                <img
+                  src="./assets/chevronDown.svg"
+                  alt="chevronDown"
+                  height="4"
+                  width="8"
+                />
+              </button>
+            </div>
+            <div>Bizi Takip Edin</div>
+            <div class="img-holder">
+              <img
+                src="./assets/facebook.svg"
+                alt="facebook"
+                width="24"
+                height="24"
+              />
+              <img
+                src="./assets/instagram.svg"
+                alt="instagram"
+                width="24"
+                height="24"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
-    <section class="banner">
+    <section class="banner-project">
       <div class="square"></div>
       <div class="banner-text">
         <h1 class="title">Projelerimiz</h1>
@@ -183,5 +329,6 @@
         </ul>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
