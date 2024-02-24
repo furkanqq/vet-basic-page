@@ -224,6 +224,163 @@
   color: #00b2e2;
 }
 
+.product-detail {
+  display: flex;
+  padding-inline: 96px;
+  gap: 52px;
+}
+
+.product-detail .detail-image {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  width: 40%;
+  gap: 24px;
+}
+
+.product-detail .detail-image .title {
+  display: none;
+}
+
+.product-detail .detail-image .main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 530px;
+  width: 530px;
+  border: 1px solid #f0f0f0;
+}
+.product-detail .detail-image .other-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product-detail .detail-image .other-image div {
+  width: 124px;
+  height: 124px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  padding: 16px;
+}
+
+.product-detail .detail-image .other-image div img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.product-detail .detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-detail .detail .explanation {
+  display: none;
+}
+
+.product-detail .detail h1 {
+  font-size: 24px;
+}
+
+.product-detail .detail p {
+  color: #666666;
+  font-size: 18px;
+}
+
+.product-detail .detail button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: none;
+  color: #fff;
+  background-color: #00b2e2;
+
+  width: 192px;
+  height: 40px;
+
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.same-products {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 96px;
+  gap: 32px;
+}
+
+.same-products .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.same-products .title .slider-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  left: 96px;
+  bottom: 72px;
+  z-index: 5;
+}
+
+.same-products .title .slider-buttons button {
+  border: none;
+  background-color: transparent;
+}
+
+.same-products .title .slider-buttons #prev-button {
+  opacity: 0.2;
+}
+
+.same-products .title .slider-buttons #next-button {
+  opacity: 0.6;
+}
+
+.same-products .slide-part {
+  display: flex;
+  gap: 24px;
+  height: max-content;
+  justify-content: space-between;
+}
+
+.same-products .slide-part .product-card {
+  border: 1px solid #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 294px;
+  height: 296px;
+  padding-inline: 16px;
+  padding-block: 12px;
+}
+
+.same-products .slide-part .product-card img:nth-child(1) {
+  padding: 4px;
+}
+
+.same-products .slide-part .product-card a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+.same-products .slide-part .product-card .detail-direction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px !important;
+  font-weight: 600;
+  gap: 32px;
+}
+
 @media screen and (max-width: 576px) {
   .banner-products .banner-text {
     padding-inline: 16px;
@@ -274,5 +431,61 @@
   .products .products-part .products-list .product-card img:nth-child(1) {
     width: 100%;
     height: 100%;
+  }
+
+  .product-detail {
+    flex-direction: column;
+    padding-inline: 16px;
+  }
+  .product-detail .detail-image {
+    width: 100%;
+  }
+
+  .product-detail .detail-image .main-image {
+    width: 100%;
+    height: max-content;
+    padding-inline: 16px;
+  }
+
+  .product-detail .detail-image .main-image img {
+    width: 100%;
+  }
+
+  .product-detail .detail-image .title {
+    display: block;
+    font-size: 21px;
+  }
+
+  .product-detail .detail-image .other-image {
+    gap: 8px;
+  }
+
+  .product-detail .detail-image .other-image div {
+    width: 164px;
+    height: 120px;
+  }
+
+  .product-detail .detail h1 {
+    display: none;
+  }
+
+  .product-detail .detail .explanation {
+    display: flex;
+  }
+
+  .same-products {
+    padding-inline: 16px;
+  }
+
+  .same-products .title .slider-buttons {
+    display: none;
+  }
+
+  .same-products .title h1 {
+    font-size: 21px;
+  }
+
+  .same-products .slide-part {
+    overflow: auto;
   }
 }

@@ -77,6 +77,23 @@
   font-weight: 600;
 }
 
+.about {
+  height: max-content !important;
+  margin-bottom: 220px !important;
+  overflow: visible !important;
+}
+
+.about .about-content {
+  height: 100% !important;
+  background-color: transparent !important;
+}
+
+.about .about-image img:nth-child(3) {
+  position: absolute;
+  left: -116px;
+  bottom: -120px;
+}
+
 @media screen and (max-width: 576px) {
   .banner-about-us .banner-text {
     padding-inline: 16px;
@@ -84,5 +101,9 @@
 
   .banner-about-us .banner-text .title {
     font-size: 21px;
+  }
+
+  .about {
+    margin-bottom: 100px !important;
   }
 }

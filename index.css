@@ -45,7 +45,6 @@ section {
 
   padding-inline: 96px;
   background-color: #fff;
-  overflow: hidden;
 }
 
 .header .nav {
@@ -139,7 +138,8 @@ section {
   padding-inline: 16px;
 }
 
-.header .buttons button:nth-child(3) {
+.header .buttons .dropdown .dropbtn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,6 +154,45 @@ section {
 
   padding-block: 8px;
   padding-inline: 16px;
+}
+
+.header .buttons .dropdown .dropbtn:hover,
+.header .buttons .dropdown .dropbtn:focus {
+  background-color: #f0f0f0 !important;
+}
+
+.header .buttons .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.header .buttons .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  border: 1px solid #f0f0f0;
+  color: #000;
+  background-color: #fff;
+  overflow: auto;
+  right: 0;
+  top: 44px;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.header .buttons .dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.header .buttons .dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.header .buttons .dropdown .show {
+  display: block;
 }
 
 .banner {
@@ -332,6 +371,11 @@ section {
   color: #00b2e2;
 }
 
+.products-main {
+  display: flex;
+  flex-direction: column;
+}
+
 .products-main .title {
   display: flex;
   flex-direction: column;
@@ -362,19 +406,18 @@ section {
 
 .products-main .card-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-block: 72px;
   padding-inline: 96px;
-  box-sizing: border-box;
   height: max-content;
-  width: 100%;
+  gap: 20px;
 }
 
 .products-main .card-list .card {
   position: relative;
+  flex: 0 0 auto;
   width: 292px;
   height: 350px;
-  overflow: hidden;
 }
 
 .products-main .card-list .card .back-img {
@@ -829,7 +872,7 @@ section {
   gap: 16px;
 }
 
-.mobile-menu .mobile-nav .mobile-footer div:nth-child(1) button {
+.mobile-menu .mobile-nav .mobile-footer div:nth-child(1) .dropdown .dropbtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -845,6 +888,66 @@ section {
   padding-block: 8px;
   padding-inline: 16px;
   margin: auto;
+}
+
+.mobile-menu
+  .mobile-nav
+  .mobile-footer
+  div:nth-child(1)
+  .dropdown
+  .dropbtn:hover,
+.mobile-menu
+  .mobile-nav
+  .mobile-footer
+  div:nth-child(1)
+  .dropdown
+  .dropbtn:focus {
+  background-color: #f0f0f0 !important;
+}
+
+.mobile-menu .mobile-nav .mobile-footer div:nth-child(1) .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.mobile-menu
+  .mobile-nav
+  .mobile-footer
+  div:nth-child(1)
+  .dropdown
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  border: 1px solid #f0f0f0;
+  color: #000;
+  background-color: #fff;
+  overflow: auto;
+  bottom: 44px;
+  right: -56px;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.mobile-menu
+  .mobile-nav
+  .mobile-footer
+  div:nth-child(1)
+  .dropdown
+  .dropdown-content
+  a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.mobile-menu .mobile-nav .mobile-footer div:nth-child(1) .dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.mobile-menu .mobile-nav .mobile-footer div:nth-child(1) .dropdown .show {
+  display: block;
 }
 
 .mobile-menu .mobile-nav .mobile-footer .img-holder {
@@ -902,7 +1005,7 @@ section {
   height: 0;
   overflow: hidden;
   padding-left: 8px;
-  transition: height 0.2s ease; /* Geçiş efekti */
+  transition: height 0.2s ease;
 }
 
 .mobile-menu .mobile-nav .nav-container .mobile-side-nav .dropdown-container a {
@@ -1003,14 +1106,10 @@ section {
     width: 32px;
   }
   .products-main .card-list {
-    flex-direction: column;
     padding-inline: 16px;
-    align-items: center;
-    gap: 12px;
+    overflow-x: auto;
   }
-  .products-main .card-list .card:nth-child(even) {
-    margin-top: 0px;
-  }
+
   .catalog {
     flex-direction: column;
     padding-inline: 16px;
