@@ -1,5 +1,5 @@
 .header .nav a:nth-child(2) {
-  color: #00b2e2 !important;
+  color: #e28b00 !important;
   transition: 200ms;
 }
 
@@ -8,7 +8,7 @@
   visibility: visible !important;
   content: "";
   transition: 200ms;
-  background-color: #00b2e2;
+  background-color: #e28b00;
   bottom: -24px;
   left: 0;
   height: 4px;

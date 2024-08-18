@@ -1,5 +1,5 @@
 .header .nav a:nth-child(4) {
-  color: #00b2e2 !important;
+  color: #e28b00 !important;
   transition: 200ms;
 }
 
@@ -8,7 +8,7 @@
   visibility: visible !important;
   content: "";
   transition: 200ms;
-  background-color: #00b2e2;
+  background-color: #e28b00;
   bottom: -24px;
   left: 0;
   height: 4px;
@@ -170,7 +170,7 @@
 
   border: none;
   color: #fff;
-  background-color: #00b2e2;
+  background-color: #e28b00;
 
   width: 192px;
   height: 40px;
@@ -203,3 +203,7 @@
     width: 100%;
   }
 }
+ #map {
+  height: 330px;
+  width: 612px;
+ }
